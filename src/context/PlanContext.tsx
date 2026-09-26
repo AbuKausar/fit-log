@@ -18,6 +18,7 @@ interface PlanContextType {
   removeFromSaved: (id: number) => void;
   isInPlan: (id: number) => boolean;
   isInSaved: (id: number) => boolean;
+  hasLoadedFromStorage: boolean;
 }
 
 const PlanContext = createContext<PlanContextType | undefined>(undefined);
@@ -146,6 +147,7 @@ export function PlanProvider({ children }: { children: ReactNode }) {
         removeFromSaved,
         isInPlan,
         isInSaved,
+        hasLoadedFromStorage,
       }}
     >
       {children}
