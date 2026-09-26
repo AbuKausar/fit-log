@@ -2,7 +2,8 @@ export interface Workout {
     id: number;
     name: string;
     image: string;
-    muscleGroups: string[];   
+    muscleGroups: string[];
+    equipment: string,   
     difficulty: string;
     duration: number;         
     caloriesBurned: number;
