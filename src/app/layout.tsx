@@ -4,6 +4,7 @@ import "./globals.css";
 import { PlanProvider } from "@/context/PlanContext";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Toaster position="top-center" />
           <Navbar></Navbar>
           <main>{children}</main>
+          <Footer></Footer>
         </PlanProvider>
       </body>
     </html>
