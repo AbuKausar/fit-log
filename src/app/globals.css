@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@theme {
+  --color-accent: #c2f800;
+  --font-display: var(--font-oswald);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background-color: #0c0d10;
+}
