@@ -25,37 +25,39 @@ const PlanContext = createContext<PlanContextType | undefined>(undefined);
 const PLAN_LIMIT = 5;
 
 export function PlanProvider({ children }: { children: ReactNode }) {
-  // Read the plan from localStorage when the state is created
-  const [plan, setPlan] = useState<PlannedWorkout[]>(() => {
-    if (typeof window === "undefined") {
-      return [];
-    }
 
+  const [plan, setPlan] = useState<PlannedWorkout[]>([]);
+  const [saved, setSaved] = useState<Workout[]>([]);
+  const [hasLoadedFromStorage, setHasLoadedFromStorage] = useState(false);
+
+  useEffect(() => {
     const storedPlan = localStorage.getItem("fitlog-plan");
-
-    return storedPlan ? JSON.parse(storedPlan) : [];
-  });
-
-  // Read saved workouts from localStorage when the state is created
-  const [saved, setSaved] = useState<Workout[]>(() => {
-    if (typeof window === "undefined") {
-      return [];
-    }
-
     const storedSaved = localStorage.getItem("fitlog-saved");
 
-    return storedSaved ? JSON.parse(storedSaved) : [];
-  });
+    if (storedPlan) {
+      setPlan(JSON.parse(storedPlan));
+    }
+
+    if (storedSaved) {
+      setSaved(JSON.parse(storedSaved));
+    }
+
+    setHasLoadedFromStorage(true);
+  }, []);
 
   // Save the plan whenever it changes
   useEffect(() => {
-    localStorage.setItem("fitlog-plan", JSON.stringify(plan));
-  }, [plan]);
+    if (hasLoadedFromStorage) {
+      localStorage.setItem("fitlog-plan", JSON.stringify(plan));
+    }
+  }, [plan, hasLoadedFromStorage]);
 
   // Save saved workouts whenever they change
   useEffect(() => {
-    localStorage.setItem("fitlog-saved", JSON.stringify(saved));
-  }, [saved]);
+    if (hasLoadedFromStorage) {
+      localStorage.setItem("fitlog-saved", JSON.stringify(saved));
+    }
+  }, [saved, hasLoadedFromStorage]);
 
   const isInPlan = (id: number) => {
     return plan.some((workout) => workout.id === id);
@@ -100,9 +102,9 @@ export function PlanProvider({ children }: { children: ReactNode }) {
       previousPlan.map((workout) =>
         workout.id === id
           ? {
-              ...workout,
-              done: !workout.done,
-            }
+            ...workout,
+            done: !workout.done,
+          }
           : workout
       )
     );
