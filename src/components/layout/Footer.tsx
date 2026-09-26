@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#090a0d] border-t border-[#1a1d24] pt-[41px] pb-10">
-            <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between">
+        <footer className="bg-[#090a0d] border-t border-[#1a1d24] pt-8 md:pt-[41px] pb-6 md:pb-10">
+            <div className="max-w-[1280px] mx-auto px-6 flex flex-col sm:flex-row items-center gap-3 sm:justify-between">
                 <Link href="/" className="flex items-center gap-2">
                     <Image src="/assets/logo.png" alt="FitLog logo" width={20} height={20} />
                     <span className="font-display font-bold text-white text-sm tracking-[0.7px] uppercase">

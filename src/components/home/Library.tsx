@@ -5,8 +5,8 @@ export default async function Library() {
     const workouts = await getAllWorkouts();
 
     return (
-        <section id="library" className="pt-16">
-            <h2 className="font-display font-bold text-white text-3xl uppercase">
+        <section id="library" className="pt-10 md:pt-16">
+            <h2 className="font-display font-bold text-white text-2xl md:text-3xl uppercase">
                 THE LIBRARY
             </h2>
             <p className="text-[#9ca3af] text-sm mt-2">

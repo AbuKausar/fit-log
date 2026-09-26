@@ -18,10 +18,10 @@ export default async function WorkoutDetailPage({
     }
 
     return (
-        <main className="max-w-[1280px] mx-auto px-6 py-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <main className="max-w-[1280px] mx-auto px-4 md:px-6 py-8 md:py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 {/* Left column — image */}
-                <div className="relative rounded-2xl overflow-hidden h-[400px] lg:h-[735px]">
+                <div className="relative rounded-2xl overflow-hidden h-[280px] md:h-[450px] lg:h-[735px]">
                     <Image
                         src={workout.image}
                         alt={workout.name}
@@ -34,7 +34,7 @@ export default async function WorkoutDetailPage({
 
                 {/* Right column — info */}
                 <div>
-                    <h1 className="font-display font-bold text-white text-3xl lg:text-4xl tracking-[-0.9px] uppercase pb-3">
+                    <h1 className="font-display font-bold text-white text-2xl md:text-3xl lg:text-4xl tracking-[-0.9px] uppercase pb-3">
                         {workout.name}
                     </h1>
                     <p className="text-[#9ca3af] text-base pb-5 max-w-[576px]">

@@ -21,7 +21,7 @@ export default function PlanCard({
     onMarkDone,
 }: PlanCardProps) {
     return (
-        <div className="bg-[#14171e] border border-[#232732] rounded-2xl flex items-center justify-between p-[17px]">
+        <div className="bg-[#14171e] border border-[#232732] rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 sm:p-[17px]">
             {/* Thumbnail + description */}
             <div className="flex gap-4 items-center">
                 <div className="relative h-20 w-36 rounded-xl overflow-hidden shrink-0 bg-[#1f2937]">
@@ -53,7 +53,7 @@ export default function PlanCard({
             </div>
 
             {/* Action buttons */}
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-3 shrink-0 justify-end sm:justify-start">
                 <Link
                     href={`/workout/${workout.id}`}
                     className="border border-[#374151] text-white text-xs px-6 py-2.5 rounded-full"

@@ -37,7 +37,7 @@ export default function MyPlanPage() {
 
             <MetricsSummary exercises={currentList.length} minutes={totalMinutes} calories={totalCalories} />
 
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
                 {/* Tabs */}
                 <div className="bg-[#151921] border border-[#232732] rounded-xl p-[5px] flex gap-1">
                     <button
