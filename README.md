@@ -27,8 +27,8 @@ FitLog lets you browse a library of 12 workouts, view detailed instructions and 
 
 ## Live Link
 
-[Add after deploy]
+[Live Link: ](https://fit-log-five-ochre.vercel.app/)
 
 ## GitHub Repository
 
-[\[Add your repo link\]](https://github.com/AbuKausar/fit-log)
+[Github link: ](https://github.com/AbuKausar/fit-log)
