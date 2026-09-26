@@ -1,15 +1,10 @@
-const HomePage = () => {
+import Hero from "@/components/home/Hero";
+
+export default function Home() {
   return (
-    <section className="min-h-screen bg-background px-4 py-20">
-      <p className="font-body text-muted">
-        Inter Font Test
-      </p>
-
-      <h1 className="mt-4 font-display text-6xl font-bold text-accent">
-        FITLOG
-      </h1>
-    </section>
+    <main className="max-w-[1280px] mx-auto px-6 py-12">
+      <Hero />
+      <section id="library">{}</section>
+    </main>
   );
-};
-
-export default HomePage;
+}
